@@ -10,6 +10,16 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -24,4 +34,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, './dist'),
     hot: true,
   },
+  optimization: {
+    minimize: false
+},
 };
