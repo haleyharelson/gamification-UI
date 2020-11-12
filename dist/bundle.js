@@ -3596,90 +3596,144 @@ steps_Steps.defaultProps = {
 // EXTERNAL MODULE: ./src/index.css
 var src = __webpack_require__(8548);
 // CONCATENATED MODULE: ./src/App.js
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+function App_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
+
+function App_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function App_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function App_createClass(Constructor, protoProps, staticProps) { if (protoProps) App_defineProperties(Constructor.prototype, protoProps); if (staticProps) App_defineProperties(Constructor, staticProps); return Constructor; }
+
+function App_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) App_setPrototypeOf(subClass, superClass); }
+
+function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return App_setPrototypeOf(o, p); }
+
+function App_createSuper(Derived) { var hasNativeReflectConstruct = App_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = App_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = App_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return App_possibleConstructorReturn(this, result); }; }
+
+function App_possibleConstructorReturn(self, call) { if (call && (App_typeof(call) === "object" || typeof call === "function")) { return call; } return App_assertThisInitialized(self); }
+
+function App_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function App_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function App_getPrototypeOf(o) { App_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return App_getPrototypeOf(o); }
 
 
 
 
-var App_Step = steps_Steps.Step;
+var App_Step = steps_Steps.Step; // change to make this a functional component
+// define a useState for getTotalPoints()
+// get rid of getTotalPoints, and use useState value wherever that function is called
 
-function getTotalPoints() {
-  // get total points 
-  return 57; // return the total amount of points the banker has (this is a fake total)
-}
+var App = /*#__PURE__*/function (_Component) {
+  App_inherits(App, _Component);
 
-function getCurrentLevel() {
-  var currentLevel;
-  var totalPoints = getTotalPoints();
+  var _super = App_createSuper(App);
 
-  if (totalPoints < 50) {
-    currentLevel = 0; // level 1
-  } else if (totalPoints >= 50 && totalPoints < 100) {
-    currentLevel = 1; // level 2
-  } else if (totalPoints >= 100 && totalPoints < 150) {
-    currentLevel = 2; // level 3
-  } else {
-    currentLevel = 3; // level 4
+  function App(props) {
+    var _this;
+
+    App_classCallCheck(this, App);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      Points: 0
+    };
+    _this.handleChange = _this.handleChange.bind(App_assertThisInitialized(_this));
+    return _this;
   }
 
-  return currentLevel;
-}
+  App_createClass(App, [{
+    key: "handleChange",
+    value: function handleChange() {
+      var points = document.getElementById("points").value;
+      this.setState({
+        Points: points
+      });
+    }
+  }, {
+    key: "getCurrentLevel",
+    value: function getCurrentLevel() {
+      var currentLevel;
+      var totalPoints = this.state.Points;
 
-function getLevelMax() {
-  var levelMax;
-  var currentLevel = getCurrentLevel();
+      if (totalPoints < 50) {
+        currentLevel = 0; // level 1
+      } else if (totalPoints >= 50 && totalPoints < 100) {
+        currentLevel = 1; // level 2
+      } else if (totalPoints >= 100 && totalPoints < 150) {
+        currentLevel = 2; // level 3
+      } else {
+        currentLevel = 3; // level 4
+      }
 
-  if (currentLevel === 0) {
-    levelMax = 50;
-  } else if (currentLevel === 1) {
-    levelMax = 100;
-  } else if (currentLevel === 2) {
-    levelMax = 150;
-  }
+      return currentLevel;
+    }
+  }, {
+    key: "getLevelMax",
+    value: function getLevelMax() {
+      var levelMax;
+      var currentLevel = this.getCurrentLevel();
 
-  return levelMax;
-}
+      if (currentLevel === 0) {
+        levelMax = 50;
+      } else if (currentLevel === 1) {
+        levelMax = 100;
+      } else if (currentLevel === 2) {
+        levelMax = 150;
+      }
 
-function getDescription() {
-  var levelMax = getLevelMax();
-  var totalPoints = getTotalPoints();
-  var pointsLeft = levelMax - totalPoints;
-  var description = pointsLeft + " points until the next level!";
-  return description.toString();
-}
+      return levelMax;
+    }
+  }, {
+    key: "getDescription",
+    value: function getDescription() {
+      var levelMax = this.getLevelMax();
+      var totalPoints = this.state.Points;
+      var pointsLeft = levelMax - totalPoints;
+      var description = pointsLeft + " points until the next level!";
+      return description.toString();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react.createElement("div", {
+        className: "App"
+      }, /*#__PURE__*/react.createElement("input", {
+        type: "text",
+        id: "points",
+        onChange: this.handleChange
+      }), /*#__PURE__*/react.createElement(steps_Steps, {
+        current: this.getCurrentLevel(),
+        direction: "horizontal"
+      }, this.getCurrentLevel() === 0 ? /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 1",
+        description: this.getDescription()
+      }) : /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 1"
+      }), this.getCurrentLevel() === 1 ? /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 2",
+        subTitle: "50 points",
+        description: this.getDescription()
+      }) : /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 2",
+        subTitle: "50 points"
+      }), this.getCurrentLevel() === 2 ? /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 3",
+        subTitle: "100 points",
+        description: this.getDescription()
+      }) : /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 3",
+        subTitle: "100 points"
+      }), /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 4",
+        subTitle: "150 points"
+      })));
+    }
+  }]);
 
-var App = function App(_ref) {
-  _objectDestructuringEmpty(_ref);
-
-  return /*#__PURE__*/react.createElement("div", {
-    className: "App"
-  }, /*#__PURE__*/react.createElement(steps_Steps, {
-    current: getCurrentLevel(),
-    direction: "horizontal"
-  }, getCurrentLevel() === 0 ? /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 1",
-    description: getDescription()
-  }) : /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 1"
-  }), getCurrentLevel() === 1 ? /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 2",
-    subTitle: "50 points",
-    description: getDescription()
-  }) : /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 2",
-    subTitle: "50 points"
-  }), getCurrentLevel() === 2 ? /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 3",
-    subTitle: "100 points",
-    description: getDescription()
-  }) : /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 3",
-    subTitle: "100 points"
-  }), /*#__PURE__*/react.createElement(App_Step, {
-    title: "Level 4",
-    subTitle: "150 points"
-  })));
-};
+  return App;
+}(react.Component);
 
 /* harmony default export */ const src_App = (App);
 
@@ -6191,7 +6245,7 @@ else {}
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "3f09acd54f05cb24f740"
+/******/ 		__webpack_require__.h = () => "2b7d53fb127dd3624750"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
