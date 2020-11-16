@@ -3618,6 +3618,8 @@ function App_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || 
 
 function App_getPrototypeOf(o) { App_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return App_getPrototypeOf(o); }
 
+function App_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -3636,26 +3638,22 @@ var App = /*#__PURE__*/function (_Component) {
     App_classCallCheck(this, App);
 
     _this = _super.call(this, props);
-    _this.state = {
-      Points: 0
-    };
-    _this.handleChange = _this.handleChange.bind(App_assertThisInitialized(_this));
-    return _this;
-  }
 
-  App_createClass(App, [{
-    key: "handleChange",
-    value: function handleChange() {
-      var points = document.getElementById("points").value;
-      this.setState({
+    App_defineProperty(App_assertThisInitialized(_this), "setPoints", function (points) {
+      _this.setState({
         Points: points
       });
-    }
-  }, {
-    key: "getCurrentLevel",
-    value: function getCurrentLevel() {
+    });
+
+    App_defineProperty(App_assertThisInitialized(_this), "handleChange", function (e) {
+      var points = e.target.value;
+
+      _this.setPoints(points);
+    });
+
+    App_defineProperty(App_assertThisInitialized(_this), "getCurrentLevel", function () {
       var currentLevel;
-      var totalPoints = this.state.Points;
+      var totalPoints = _this.state.Points;
 
       if (totalPoints < 50) {
         currentLevel = 0; // level 1
@@ -3668,12 +3666,12 @@ var App = /*#__PURE__*/function (_Component) {
       }
 
       return currentLevel;
-    }
-  }, {
-    key: "getLevelMax",
-    value: function getLevelMax() {
+    });
+
+    App_defineProperty(App_assertThisInitialized(_this), "getLevelMax", function () {
       var levelMax;
-      var currentLevel = this.getCurrentLevel();
+
+      var currentLevel = _this.getCurrentLevel();
 
       if (currentLevel === 0) {
         levelMax = 50;
@@ -3684,25 +3682,33 @@ var App = /*#__PURE__*/function (_Component) {
       }
 
       return levelMax;
-    }
-  }, {
-    key: "getDescription",
-    value: function getDescription() {
-      var levelMax = this.getLevelMax();
-      var totalPoints = this.state.Points;
+    });
+
+    App_defineProperty(App_assertThisInitialized(_this), "getDescription", function () {
+      var levelMax = _this.getLevelMax();
+
+      var totalPoints = _this.state.Points;
       var pointsLeft = levelMax - totalPoints;
       var description = pointsLeft + " points until the next level!";
       return description.toString();
-    }
-  }, {
+    });
+
+    _this.state = {
+      Points: 0
+    };
+    return _this;
+  }
+
+  App_createClass(App, [{
     key: "render",
     value: function render() {
       return /*#__PURE__*/react.createElement("div", {
         className: "App"
       }, /*#__PURE__*/react.createElement("input", {
         type: "text",
-        id: "points",
-        onChange: this.handleChange
+        name: "pts",
+        onChange: this.handleChange,
+        value: this.state.Points
       }), /*#__PURE__*/react.createElement(steps_Steps, {
         current: this.getCurrentLevel(),
         direction: "horizontal"
@@ -6245,7 +6251,7 @@ else {}
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "2b7d53fb127dd3624750"
+/******/ 		__webpack_require__.h = () => "1d13d93211053e13276e"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

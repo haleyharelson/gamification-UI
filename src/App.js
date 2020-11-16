@@ -12,17 +12,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { Points: 0 };
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(){
-    var points = document.getElementById("points").value;
+  setPoints = (points) => {
     this.setState({
       Points : points
-    })
+    });
   }
 
-  getCurrentLevel() {
+  handleChange = (e) => {
+    var points = e.target.value;
+    this.setPoints(points);
+  }
+
+  getCurrentLevel = () => {
     var currentLevel;
     var totalPoints = this.state.Points;
     if (totalPoints < 50) {
@@ -37,7 +40,7 @@ class App extends Component {
     return currentLevel;
   }
 
-  getLevelMax() {
+  getLevelMax = () => {
     var levelMax;
     var currentLevel = this.getCurrentLevel();
     if (currentLevel === 0) {
@@ -50,7 +53,7 @@ class App extends Component {
     return levelMax;
   }
 
-  getDescription() {
+  getDescription = () => {
     var levelMax = this.getLevelMax();
     var totalPoints = this.state.Points;
     var pointsLeft = levelMax - totalPoints;
@@ -62,7 +65,7 @@ class App extends Component {
  render(){
    return(
     <div className="App">
-    <input type="text" id="points" onChange={this.handleChange}/>
+    <input type="text" name="pts" onChange={this.handleChange} value={this.state.Points}/>
     <Steps current={this.getCurrentLevel()} direction={"horizontal"}>
     {this.getCurrentLevel() === 0 ? <Step title="Level 1" description={this.getDescription()}/> : <Step title="Level 1" />}
     {this.getCurrentLevel() === 1 ? <Step title="Level 2" subTitle="50 points" description={this.getDescription()}/> : <Step title="Level 2" subTitle="50 points"/>}
