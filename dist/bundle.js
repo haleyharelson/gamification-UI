@@ -3700,6 +3700,17 @@ var App = /*#__PURE__*/function (_Component) {
   }
 
   App_createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.fetchCRMData();
+    }
+  }, {
+    key: "fetchCRMData",
+    value: function fetchCRMData() {
+      // code for fetching data
+      this.setPoints(123);
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react.createElement("div", {
@@ -6251,7 +6262,7 @@ else {}
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "1d13d93211053e13276e"
+/******/ 		__webpack_require__.h = () => "d5c864dfec4e219116d0"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

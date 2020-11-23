@@ -14,6 +14,15 @@ class App extends Component {
     this.state = { Points: 0 };
   }
 
+  componentDidMount() {
+    this.fetchCRMData();
+  }
+
+  fetchCRMData() {
+    // code for fetching data
+    this.setPoints(123);
+  }
+
   setPoints = (points) => {
     this.setState({
       Points : points
