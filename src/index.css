@@ -1,4 +1,63 @@
 @import '~antd/dist/antd.css';
-.App {
-  padding: 70px;
+.parent {
+  padding: 30px;
+  display: flex;
+  align-self: start;
+}
+.stepsComponent {
+  padding-top: 15px;
+}
+.sectionContainer {
+  flex-direction: column;
+}
+.firstSection {
+  margin-top: 5px;
+  display: flex;
+  align-self: start;
+  height: 54px;
+  width: 100px;
+}
+.secondSection {
+  margin-top: 55px;
+  display: flex;
+  align-self: start;
+  height: 54px;
+  width: 100px;
+}
+.thirdSection {
+  margin-top: 107px;
+  display: flex;
+  align-self: start;
+  height: 54px;
+  width: 100px;
+}
+.fourthSection {
+  margin-top: 148px;
+  display: flex;
+  align-self: start;
+  height: 54px;
+  width: 100px;
+}
+.currentLevelSymbol {
+  width: 62px;
+  height: 62px;
+  margin-left: 20px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color:#1890ff;
+  background-color: #ecf3f9;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: center;
+}
+.pointsText {
+  font-size: 10px;
+  font-weight: bold;
+}
+.bottomText {
+  font-size: 8px;
+  font: bold;
+  line-height: 5px;
 }

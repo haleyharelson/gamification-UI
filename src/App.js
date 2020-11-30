@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Steps } from "antd";
 import './index.css';
+import { TrophyOutlined, StarFilled } from '@ant-design/icons';
 
 const { Step } = Steps;
-
-// change to make this a functional component
-// define a useState for getTotalPoints()
-// get rid of getTotalPoints, and use useState value wherever that function is called
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +17,7 @@ class App extends Component {
 
   fetchCRMData() {
     // code for fetching data
-    this.setPoints(123);
+    this.setPoints(125);
   }
 
   setPoints = (points) => {
@@ -56,31 +53,97 @@ class App extends Component {
       levelMax = 50;
     } else if (currentLevel === 1) {
       levelMax = 100;
-    } else if (currentLevel === 2) {
+    } else if (currentLevel >= 2) {
       levelMax = 150;
     }
     return levelMax;
   }
 
+  getTotalPoints = () => {
+    var totalPoints = this.state.Points;
+    return totalPoints;
+  }
+
   getDescription = () => {
     var levelMax = this.getLevelMax();
-    var totalPoints = this.state.Points;
+    var totalPoints = this.getTotalPoints();
     var pointsLeft = levelMax - totalPoints;
-    var description = pointsLeft + " points until the next level!";
+    var description = pointsLeft + " points to go!";
   
     return description.toString();
   }
 
- render(){
+  getPercentage = () => {
+    var levelMax = this.getLevelMax();
+    var totalPoints = this.getTotalPoints();
+
+    var percent = (totalPoints / levelMax) * 100;
+    if (totalPoints >= 50 && totalPoints < 100) {
+      percent = ((totalPoints - 50) / 50) * 100;
+    } else if (totalPoints >= 100 && totalPoints < 150) {
+      percent = ((totalPoints - 100) / 50) * 100;
+    }
+    return percent;
+  }
+
+ render() {
    return(
-    <div className="App">
-    <input type="text" name="pts" onChange={this.handleChange} value={this.state.Points}/>
-    <Steps current={this.getCurrentLevel()} direction={"horizontal"}>
+    <div className="parent">
+    <div className="sectionContainer">
+      {this.getCurrentLevel() === 0 ? 
+      <div className="firstSection">
+      <div className="currentLevelSymbol"> 
+      <StarFilled style={{ fontSize: '25px', color:'#FFD700'}}/> 
+      <div className="pointsText"> {this.getTotalPoints()}/{this.getLevelMax()} </div>
+      <div className="bottomText"> points </div>
+      </div>
+      </div>
+      : null}
+      {this.getCurrentLevel() === 1 ?
+      <div className="secondSection">
+      <div className="currentLevelSymbol"> 
+      <StarFilled style={{ fontSize: '25px', color:'#FFD700'}}/> 
+      <div className="pointsText"> {this.getTotalPoints()}/{this.getLevelMax()} </div>
+      <div className="bottomText"> points </div>
+      </div>
+      </div>
+      : null}
+      {this.getCurrentLevel() === 2 ?
+      <div className="thirdSection">
+      <div className="currentLevelSymbol"> 
+      <StarFilled style={{ fontSize: '25px', color:'#FFD700'}}/> 
+      <div className="pointsText"> {this.getTotalPoints()}/{this.getLevelMax()} </div>
+      <div className="bottomText"> points </div>
+      </div>
+      </div>
+      : null}
+      {this.getCurrentLevel() === 3 ?
+      <div className="fourthSection">
+      <div className="currentLevelSymbol"> 
+      <StarFilled style={{ fontSize: '25px', color:'#FFD700'}}/> 
+      <div className="pointsText"> {this.getTotalPoints()}/{this.getLevelMax()} </div>
+      <div className="bottomText"> points </div>
+      </div>  
+      </div>
+      : null}
+    </div>
+    <div className="stepsComponent">
+    {this.getCurrentLevel() === 3 ?  
+    <Steps current={this.getCurrentLevel()} direction={"vertical"}>
     {this.getCurrentLevel() === 0 ? <Step title="Level 1" description={this.getDescription()}/> : <Step title="Level 1" />}
     {this.getCurrentLevel() === 1 ? <Step title="Level 2" subTitle="50 points" description={this.getDescription()}/> : <Step title="Level 2" subTitle="50 points"/>}
     {this.getCurrentLevel() === 2 ? <Step title="Level 3" subTitle="100 points" description={this.getDescription()}/> : <Step title="Level 3" subTitle="100 points"/>}
-    <Step title="Level 4" subTitle="150 points"/> 
+    <Step title="Level 4" subTitle="150 points" icon={<TrophyOutlined/>}/> 
     </Steps>
+    : 
+    <Steps current={this.getCurrentLevel()} direction={"vertical"} percent={this.getPercentage()}>
+    {this.getCurrentLevel() === 0 ? <Step title="Level 1" description={this.getDescription()}/> : <Step title="Level 1" />}
+    {this.getCurrentLevel() === 1 ? <Step title="Level 2" subTitle="50 points" description={this.getDescription()}/> : <Step title="Level 2" subTitle="50 points"/>}
+    {this.getCurrentLevel() === 2 ? <Step title="Level 3" subTitle="100 points" description={this.getDescription()}/> : <Step title="Level 3" subTitle="100 points"/>}
+    <Step title="Level 4" subTitle="150 points" icon={<TrophyOutlined/>}/> 
+    </Steps>
+  }
+  </div>
   </div>
    );
  }

@@ -167,7 +167,7 @@ var _utils = __webpack_require__(2479);
 // Initial setting
 // should move it to antd main repo?
 (0, _twoTonePrimaryColor.setTwoToneColor)('#1890ff');
-var Icon = React.forwardRef(function (props, ref) {
+var Icon = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var className = props.className,
       icon = props.icon,
       spin = props.spin,
@@ -176,10 +176,9 @@ var Icon = React.forwardRef(function (props, ref) {
       onClick = props.onClick,
       twoToneColor = props.twoToneColor,
       restProps = (0, _objectWithoutProperties2.default)(props, ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"]);
-  var classString = (0, _classnames.default)('anticon', (0, _defineProperty2.default)({}, "anticon-".concat(icon.name), Boolean(icon.name)), className);
-  var svgClassString = (0, _classnames.default)({
+  var classString = (0, _classnames.default)('anticon', (0, _defineProperty2.default)({}, "anticon-".concat(icon.name), Boolean(icon.name)), {
     'anticon-spin': !!spin || icon.name === 'loading'
-  });
+  }, className);
   var iconTabIndex = tabIndex;
 
   if (iconTabIndex === undefined && onClick) {
@@ -196,7 +195,7 @@ var Icon = React.forwardRef(function (props, ref) {
       primaryColor = _normalizeTwoToneColo2[0],
       secondaryColor = _normalizeTwoToneColo2[1];
 
-  return React.createElement("span", Object.assign({
+  return /*#__PURE__*/React.createElement("span", Object.assign({
     role: "img",
     "aria-label": icon.name
   }, restProps, {
@@ -204,8 +203,7 @@ var Icon = React.forwardRef(function (props, ref) {
     tabIndex: iconTabIndex,
     onClick: onClick,
     className: classString
-  }), React.createElement(_IconBase.default, {
-    className: svgClassString,
+  }), /*#__PURE__*/React.createElement(_IconBase.default, {
     icon: icon,
     primaryColor: primaryColor,
     secondaryColor: secondaryColor,
@@ -377,7 +375,7 @@ var _AntdIcon = _interopRequireDefault(__webpack_require__(2074));
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
 var CheckCircleFilled = function CheckCircleFilled(props, ref) {
-  return React.createElement(_AntdIcon.default, Object.assign({}, props, {
+  return /*#__PURE__*/React.createElement(_AntdIcon.default, Object.assign({}, props, {
     ref: ref,
     icon: _CheckCircleFilled.default
   }));
@@ -385,7 +383,7 @@ var CheckCircleFilled = function CheckCircleFilled(props, ref) {
 
 CheckCircleFilled.displayName = 'CheckCircleFilled';
 
-var _default = React.forwardRef(CheckCircleFilled);
+var _default = /*#__PURE__*/React.forwardRef(CheckCircleFilled);
 
 exports.default = _default;
 
@@ -415,7 +413,7 @@ var _AntdIcon = _interopRequireDefault(__webpack_require__(2074));
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
 var CheckOutlined = function CheckOutlined(props, ref) {
-  return React.createElement(_AntdIcon.default, Object.assign({}, props, {
+  return /*#__PURE__*/React.createElement(_AntdIcon.default, Object.assign({}, props, {
     ref: ref,
     icon: _CheckOutlined.default
   }));
@@ -423,7 +421,7 @@ var CheckOutlined = function CheckOutlined(props, ref) {
 
 CheckOutlined.displayName = 'CheckOutlined';
 
-var _default = React.forwardRef(CheckOutlined);
+var _default = /*#__PURE__*/React.forwardRef(CheckOutlined);
 
 exports.default = _default;
 
@@ -453,7 +451,7 @@ var _AntdIcon = _interopRequireDefault(__webpack_require__(2074));
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
 var CloseCircleFilled = function CloseCircleFilled(props, ref) {
-  return React.createElement(_AntdIcon.default, Object.assign({}, props, {
+  return /*#__PURE__*/React.createElement(_AntdIcon.default, Object.assign({}, props, {
     ref: ref,
     icon: _CloseCircleFilled.default
   }));
@@ -461,7 +459,7 @@ var CloseCircleFilled = function CloseCircleFilled(props, ref) {
 
 CloseCircleFilled.displayName = 'CloseCircleFilled';
 
-var _default = React.forwardRef(CloseCircleFilled);
+var _default = /*#__PURE__*/React.forwardRef(CloseCircleFilled);
 
 exports.default = _default;
 
@@ -491,7 +489,7 @@ var _AntdIcon = _interopRequireDefault(__webpack_require__(2074));
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
 var CloseOutlined = function CloseOutlined(props, ref) {
-  return React.createElement(_AntdIcon.default, Object.assign({}, props, {
+  return /*#__PURE__*/React.createElement(_AntdIcon.default, Object.assign({}, props, {
     ref: ref,
     icon: _CloseOutlined.default
   }));
@@ -499,7 +497,7 @@ var CloseOutlined = function CloseOutlined(props, ref) {
 
 CloseOutlined.displayName = 'CloseOutlined';
 
-var _default = React.forwardRef(CloseOutlined);
+var _default = /*#__PURE__*/React.forwardRef(CloseOutlined);
 
 exports.default = _default;
 
@@ -530,7 +528,7 @@ var _objectSpread2 = _interopRequireDefault(__webpack_require__(1109));
 
 var _typeof2 = _interopRequireDefault(__webpack_require__(8));
 
-var _colors = __webpack_require__(4100);
+var _colors = __webpack_require__(3249);
 
 var _react = _interopRequireWildcard(__webpack_require__(7294));
 
@@ -567,14 +565,14 @@ function normalizeAttrs() {
 
 function generate(node, key, rootProps) {
   if (!rootProps) {
-    return _react.default.createElement(node.tag, (0, _objectSpread2.default)({
+    return /*#__PURE__*/_react.default.createElement(node.tag, (0, _objectSpread2.default)({
       key: key
     }, normalizeAttrs(node.attrs)), (node.children || []).map(function (child, index) {
       return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
     }));
   }
 
-  return _react.default.createElement(node.tag, (0, _objectSpread2.default)((0, _objectSpread2.default)({
+  return /*#__PURE__*/_react.default.createElement(node.tag, (0, _objectSpread2.default)((0, _objectSpread2.default)({
     key: key
   }, normalizeAttrs(node.attrs)), rootProps), (node.children || []).map(function (child, index) {
     return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
@@ -624,162 +622,1379 @@ exports.useInsertStyles = useInsertStyles;
 
 /***/ }),
 
-/***/ 2808:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ 3249:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "blue": () => /* binding */ blue,
+  "cyan": () => /* binding */ cyan,
+  "geekblue": () => /* binding */ geekblue,
+  "generate": () => /* binding */ generate,
+  "gold": () => /* binding */ gold,
+  "green": () => /* binding */ green,
+  "grey": () => /* binding */ grey,
+  "lime": () => /* binding */ lime,
+  "magenta": () => /* binding */ magenta,
+  "orange": () => /* binding */ orange,
+  "presetDarkPalettes": () => /* binding */ presetDarkPalettes,
+  "presetPalettes": () => /* binding */ presetPalettes,
+  "presetPrimaryColors": () => /* binding */ presetPrimaryColors,
+  "purple": () => /* binding */ purple,
+  "red": () => /* binding */ red,
+  "volcano": () => /* binding */ volcano,
+  "yellow": () => /* binding */ yellow
+});
+
+// CONCATENATED MODULE: ./node_modules/@ctrl/tinycolor/dist/module/util.js
+/**
+ * Take input from [0, n] and return it as [0, 1]
+ * @hidden
+ */
+function bound01(n, max) {
+    if (isOnePointZero(n)) {
+        n = '100%';
+    }
+    var isPercent = isPercentage(n);
+    n = max === 360 ? n : Math.min(max, Math.max(0, parseFloat(n)));
+    // Automatically convert percentage into number
+    if (isPercent) {
+        n = parseInt(String(n * max), 10) / 100;
+    }
+    // Handle floating point rounding errors
+    if (Math.abs(n - max) < 0.000001) {
+        return 1;
+    }
+    // Convert into [0, 1] range if it isn't already
+    if (max === 360) {
+        // If n is a hue given in degrees,
+        // wrap around out-of-range values into [0, 360] range
+        // then convert into [0, 1].
+        n = (n < 0 ? (n % max) + max : n % max) / parseFloat(String(max));
+    }
+    else {
+        // If n not a hue given in degrees
+        // Convert into [0, 1] range if it isn't already.
+        n = (n % max) / parseFloat(String(max));
+    }
+    return n;
+}
+/**
+ * Force a number between 0 and 1
+ * @hidden
+ */
+function clamp01(val) {
+    return Math.min(1, Math.max(0, val));
+}
+/**
+ * Need to handle 1.0 as 100%, since once it is a number, there is no difference between it and 1
+ * <http://stackoverflow.com/questions/7422072/javascript-how-to-detect-number-as-a-decimal-including-1-0>
+ * @hidden
+ */
+function isOnePointZero(n) {
+    return typeof n === 'string' && n.includes('.') && parseFloat(n) === 1;
+}
+/**
+ * Check to see if string passed in is a percentage
+ * @hidden
+ */
+function isPercentage(n) {
+    return typeof n === 'string' && n.includes('%');
+}
+/**
+ * Return a valid alpha value [0,1] with all invalid values being set to 1
+ * @hidden
+ */
+function boundAlpha(a) {
+    a = parseFloat(a);
+    if (isNaN(a) || a < 0 || a > 1) {
+        a = 1;
+    }
+    return a;
+}
+/**
+ * Replace a decimal with it's percentage value
+ * @hidden
+ */
+function convertToPercentage(n) {
+    if (n <= 1) {
+        return Number(n) * 100 + "%";
+    }
+    return n;
+}
+/**
+ * Force a hex value to have 2 characters
+ * @hidden
+ */
+function util_pad2(c) {
+    return c.length === 1 ? '0' + c : String(c);
+}
+
+// CONCATENATED MODULE: ./node_modules/@ctrl/tinycolor/dist/module/conversion.js
+
+// `rgbToHsl`, `rgbToHsv`, `hslToRgb`, `hsvToRgb` modified from:
+// <http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript>
+/**
+ * Handle bounds / percentage checking to conform to CSS color spec
+ * <http://www.w3.org/TR/css3-color/>
+ * *Assumes:* r, g, b in [0, 255] or [0, 1]
+ * *Returns:* { r, g, b } in [0, 255]
+ */
+function rgbToRgb(r, g, b) {
+    return {
+        r: bound01(r, 255) * 255,
+        g: bound01(g, 255) * 255,
+        b: bound01(b, 255) * 255,
+    };
+}
+/**
+ * Converts an RGB color value to HSL.
+ * *Assumes:* r, g, and b are contained in [0, 255] or [0, 1]
+ * *Returns:* { h, s, l } in [0,1]
+ */
+function rgbToHsl(r, g, b) {
+    r = bound01(r, 255);
+    g = bound01(g, 255);
+    b = bound01(b, 255);
+    var max = Math.max(r, g, b);
+    var min = Math.min(r, g, b);
+    var h = 0;
+    var s = 0;
+    var l = (max + min) / 2;
+    if (max === min) {
+        s = 0;
+        h = 0; // achromatic
+    }
+    else {
+        var d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r:
+                h = (g - b) / d + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / d + 2;
+                break;
+            case b:
+                h = (r - g) / d + 4;
+                break;
+            default:
+                break;
+        }
+        h /= 6;
+    }
+    return { h: h, s: s, l: l };
+}
+function hue2rgb(p, q, t) {
+    if (t < 0) {
+        t += 1;
+    }
+    if (t > 1) {
+        t -= 1;
+    }
+    if (t < 1 / 6) {
+        return p + (q - p) * (6 * t);
+    }
+    if (t < 1 / 2) {
+        return q;
+    }
+    if (t < 2 / 3) {
+        return p + (q - p) * (2 / 3 - t) * 6;
+    }
+    return p;
+}
+/**
+ * Converts an HSL color value to RGB.
+ *
+ * *Assumes:* h is contained in [0, 1] or [0, 360] and s and l are contained [0, 1] or [0, 100]
+ * *Returns:* { r, g, b } in the set [0, 255]
+ */
+function hslToRgb(h, s, l) {
+    var r;
+    var g;
+    var b;
+    h = bound01(h, 360);
+    s = bound01(s, 100);
+    l = bound01(l, 100);
+    if (s === 0) {
+        // achromatic
+        g = l;
+        b = l;
+        r = l;
+    }
+    else {
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+    return { r: r * 255, g: g * 255, b: b * 255 };
+}
+/**
+ * Converts an RGB color value to HSV
+ *
+ * *Assumes:* r, g, and b are contained in the set [0, 255] or [0, 1]
+ * *Returns:* { h, s, v } in [0,1]
+ */
+function rgbToHsv(r, g, b) {
+    r = bound01(r, 255);
+    g = bound01(g, 255);
+    b = bound01(b, 255);
+    var max = Math.max(r, g, b);
+    var min = Math.min(r, g, b);
+    var h = 0;
+    var v = max;
+    var d = max - min;
+    var s = max === 0 ? 0 : d / max;
+    if (max === min) {
+        h = 0; // achromatic
+    }
+    else {
+        switch (max) {
+            case r:
+                h = (g - b) / d + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / d + 2;
+                break;
+            case b:
+                h = (r - g) / d + 4;
+                break;
+            default:
+                break;
+        }
+        h /= 6;
+    }
+    return { h: h, s: s, v: v };
+}
+/**
+ * Converts an HSV color value to RGB.
+ *
+ * *Assumes:* h is contained in [0, 1] or [0, 360] and s and v are contained in [0, 1] or [0, 100]
+ * *Returns:* { r, g, b } in the set [0, 255]
+ */
+function hsvToRgb(h, s, v) {
+    h = bound01(h, 360) * 6;
+    s = bound01(s, 100);
+    v = bound01(v, 100);
+    var i = Math.floor(h);
+    var f = h - i;
+    var p = v * (1 - s);
+    var q = v * (1 - f * s);
+    var t = v * (1 - (1 - f) * s);
+    var mod = i % 6;
+    var r = [v, q, p, p, t, v][mod];
+    var g = [t, v, v, q, p, p][mod];
+    var b = [p, p, t, v, v, q][mod];
+    return { r: r * 255, g: g * 255, b: b * 255 };
+}
+/**
+ * Converts an RGB color to hex
+ *
+ * Assumes r, g, and b are contained in the set [0, 255]
+ * Returns a 3 or 6 character hex
+ */
+function rgbToHex(r, g, b, allow3Char) {
+    var hex = [
+        util_pad2(Math.round(r).toString(16)),
+        util_pad2(Math.round(g).toString(16)),
+        util_pad2(Math.round(b).toString(16)),
+    ];
+    // Return a 3 character hex if possible
+    if (allow3Char &&
+        hex[0].startsWith(hex[0].charAt(1)) &&
+        hex[1].startsWith(hex[1].charAt(1)) &&
+        hex[2].startsWith(hex[2].charAt(1))) {
+        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);
+    }
+    return hex.join('');
+}
+/**
+ * Converts an RGBA color plus alpha transparency to hex
+ *
+ * Assumes r, g, b are contained in the set [0, 255] and
+ * a in [0, 1]. Returns a 4 or 8 character rgba hex
+ */
+// eslint-disable-next-line max-params
+function rgbaToHex(r, g, b, a, allow4Char) {
+    var hex = [
+        util_pad2(Math.round(r).toString(16)),
+        util_pad2(Math.round(g).toString(16)),
+        util_pad2(Math.round(b).toString(16)),
+        util_pad2(convertDecimalToHex(a)),
+    ];
+    // Return a 4 character hex if possible
+    if (allow4Char &&
+        hex[0].startsWith(hex[0].charAt(1)) &&
+        hex[1].startsWith(hex[1].charAt(1)) &&
+        hex[2].startsWith(hex[2].charAt(1)) &&
+        hex[3].startsWith(hex[3].charAt(1))) {
+        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0) + hex[3].charAt(0);
+    }
+    return hex.join('');
+}
+/**
+ * Converts an RGBA color to an ARGB Hex8 string
+ * Rarely used, but required for "toFilter()"
+ */
+function rgbaToArgbHex(r, g, b, a) {
+    var hex = [
+        pad2(convertDecimalToHex(a)),
+        pad2(Math.round(r).toString(16)),
+        pad2(Math.round(g).toString(16)),
+        pad2(Math.round(b).toString(16)),
+    ];
+    return hex.join('');
+}
+/** Converts a decimal to a hex value */
+function convertDecimalToHex(d) {
+    return Math.round(parseFloat(d) * 255).toString(16);
+}
+/** Converts a hex value to a decimal */
+function convertHexToDecimal(h) {
+    return parseIntFromHex(h) / 255;
+}
+/** Parse a base-16 hex value into a base-10 integer */
+function parseIntFromHex(val) {
+    return parseInt(val, 16);
+}
+function numberInputToObject(color) {
+    return {
+        r: color >> 16,
+        g: (color & 0xff00) >> 8,
+        b: color & 0xff,
+    };
+}
+
+// CONCATENATED MODULE: ./node_modules/@ctrl/tinycolor/dist/module/css-color-names.js
+// https://github.com/bahamas10/css-color-names/blob/master/css-color-names.json
+/**
+ * @hidden
+ */
+var names = {
+    aliceblue: '#f0f8ff',
+    antiquewhite: '#faebd7',
+    aqua: '#00ffff',
+    aquamarine: '#7fffd4',
+    azure: '#f0ffff',
+    beige: '#f5f5dc',
+    bisque: '#ffe4c4',
+    black: '#000000',
+    blanchedalmond: '#ffebcd',
+    blue: '#0000ff',
+    blueviolet: '#8a2be2',
+    brown: '#a52a2a',
+    burlywood: '#deb887',
+    cadetblue: '#5f9ea0',
+    chartreuse: '#7fff00',
+    chocolate: '#d2691e',
+    coral: '#ff7f50',
+    cornflowerblue: '#6495ed',
+    cornsilk: '#fff8dc',
+    crimson: '#dc143c',
+    cyan: '#00ffff',
+    darkblue: '#00008b',
+    darkcyan: '#008b8b',
+    darkgoldenrod: '#b8860b',
+    darkgray: '#a9a9a9',
+    darkgreen: '#006400',
+    darkgrey: '#a9a9a9',
+    darkkhaki: '#bdb76b',
+    darkmagenta: '#8b008b',
+    darkolivegreen: '#556b2f',
+    darkorange: '#ff8c00',
+    darkorchid: '#9932cc',
+    darkred: '#8b0000',
+    darksalmon: '#e9967a',
+    darkseagreen: '#8fbc8f',
+    darkslateblue: '#483d8b',
+    darkslategray: '#2f4f4f',
+    darkslategrey: '#2f4f4f',
+    darkturquoise: '#00ced1',
+    darkviolet: '#9400d3',
+    deeppink: '#ff1493',
+    deepskyblue: '#00bfff',
+    dimgray: '#696969',
+    dimgrey: '#696969',
+    dodgerblue: '#1e90ff',
+    firebrick: '#b22222',
+    floralwhite: '#fffaf0',
+    forestgreen: '#228b22',
+    fuchsia: '#ff00ff',
+    gainsboro: '#dcdcdc',
+    ghostwhite: '#f8f8ff',
+    goldenrod: '#daa520',
+    gold: '#ffd700',
+    gray: '#808080',
+    green: '#008000',
+    greenyellow: '#adff2f',
+    grey: '#808080',
+    honeydew: '#f0fff0',
+    hotpink: '#ff69b4',
+    indianred: '#cd5c5c',
+    indigo: '#4b0082',
+    ivory: '#fffff0',
+    khaki: '#f0e68c',
+    lavenderblush: '#fff0f5',
+    lavender: '#e6e6fa',
+    lawngreen: '#7cfc00',
+    lemonchiffon: '#fffacd',
+    lightblue: '#add8e6',
+    lightcoral: '#f08080',
+    lightcyan: '#e0ffff',
+    lightgoldenrodyellow: '#fafad2',
+    lightgray: '#d3d3d3',
+    lightgreen: '#90ee90',
+    lightgrey: '#d3d3d3',
+    lightpink: '#ffb6c1',
+    lightsalmon: '#ffa07a',
+    lightseagreen: '#20b2aa',
+    lightskyblue: '#87cefa',
+    lightslategray: '#778899',
+    lightslategrey: '#778899',
+    lightsteelblue: '#b0c4de',
+    lightyellow: '#ffffe0',
+    lime: '#00ff00',
+    limegreen: '#32cd32',
+    linen: '#faf0e6',
+    magenta: '#ff00ff',
+    maroon: '#800000',
+    mediumaquamarine: '#66cdaa',
+    mediumblue: '#0000cd',
+    mediumorchid: '#ba55d3',
+    mediumpurple: '#9370db',
+    mediumseagreen: '#3cb371',
+    mediumslateblue: '#7b68ee',
+    mediumspringgreen: '#00fa9a',
+    mediumturquoise: '#48d1cc',
+    mediumvioletred: '#c71585',
+    midnightblue: '#191970',
+    mintcream: '#f5fffa',
+    mistyrose: '#ffe4e1',
+    moccasin: '#ffe4b5',
+    navajowhite: '#ffdead',
+    navy: '#000080',
+    oldlace: '#fdf5e6',
+    olive: '#808000',
+    olivedrab: '#6b8e23',
+    orange: '#ffa500',
+    orangered: '#ff4500',
+    orchid: '#da70d6',
+    palegoldenrod: '#eee8aa',
+    palegreen: '#98fb98',
+    paleturquoise: '#afeeee',
+    palevioletred: '#db7093',
+    papayawhip: '#ffefd5',
+    peachpuff: '#ffdab9',
+    peru: '#cd853f',
+    pink: '#ffc0cb',
+    plum: '#dda0dd',
+    powderblue: '#b0e0e6',
+    purple: '#800080',
+    rebeccapurple: '#663399',
+    red: '#ff0000',
+    rosybrown: '#bc8f8f',
+    royalblue: '#4169e1',
+    saddlebrown: '#8b4513',
+    salmon: '#fa8072',
+    sandybrown: '#f4a460',
+    seagreen: '#2e8b57',
+    seashell: '#fff5ee',
+    sienna: '#a0522d',
+    silver: '#c0c0c0',
+    skyblue: '#87ceeb',
+    slateblue: '#6a5acd',
+    slategray: '#708090',
+    slategrey: '#708090',
+    snow: '#fffafa',
+    springgreen: '#00ff7f',
+    steelblue: '#4682b4',
+    tan: '#d2b48c',
+    teal: '#008080',
+    thistle: '#d8bfd8',
+    tomato: '#ff6347',
+    turquoise: '#40e0d0',
+    violet: '#ee82ee',
+    wheat: '#f5deb3',
+    white: '#ffffff',
+    whitesmoke: '#f5f5f5',
+    yellow: '#ffff00',
+    yellowgreen: '#9acd32',
 };
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var tinycolor2_1 = __importDefault(__webpack_require__(7621));
+
+// CONCATENATED MODULE: ./node_modules/@ctrl/tinycolor/dist/module/format-input.js
+
+
+
+/**
+ * Given a string or object, convert that input to RGB
+ *
+ * Possible string inputs:
+ * ```
+ * "red"
+ * "#f00" or "f00"
+ * "#ff0000" or "ff0000"
+ * "#ff000000" or "ff000000"
+ * "rgb 255 0 0" or "rgb (255, 0, 0)"
+ * "rgb 1.0 0 0" or "rgb (1, 0, 0)"
+ * "rgba (255, 0, 0, 1)" or "rgba 255, 0, 0, 1"
+ * "rgba (1.0, 0, 0, 1)" or "rgba 1.0, 0, 0, 1"
+ * "hsl(0, 100%, 50%)" or "hsl 0 100% 50%"
+ * "hsla(0, 100%, 50%, 1)" or "hsla 0 100% 50%, 1"
+ * "hsv(0, 100%, 100%)" or "hsv 0 100% 100%"
+ * ```
+ */
+function inputToRGB(color) {
+    var rgb = { r: 0, g: 0, b: 0 };
+    var a = 1;
+    var s = null;
+    var v = null;
+    var l = null;
+    var ok = false;
+    var format = false;
+    if (typeof color === 'string') {
+        color = stringInputToObject(color);
+    }
+    if (typeof color === 'object') {
+        if (isValidCSSUnit(color.r) && isValidCSSUnit(color.g) && isValidCSSUnit(color.b)) {
+            rgb = rgbToRgb(color.r, color.g, color.b);
+            ok = true;
+            format = String(color.r).substr(-1) === '%' ? 'prgb' : 'rgb';
+        }
+        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.v)) {
+            s = convertToPercentage(color.s);
+            v = convertToPercentage(color.v);
+            rgb = hsvToRgb(color.h, s, v);
+            ok = true;
+            format = 'hsv';
+        }
+        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.l)) {
+            s = convertToPercentage(color.s);
+            l = convertToPercentage(color.l);
+            rgb = hslToRgb(color.h, s, l);
+            ok = true;
+            format = 'hsl';
+        }
+        if (Object.prototype.hasOwnProperty.call(color, 'a')) {
+            a = color.a;
+        }
+    }
+    a = boundAlpha(a);
+    return {
+        ok: ok,
+        format: color.format || format,
+        r: Math.min(255, Math.max(rgb.r, 0)),
+        g: Math.min(255, Math.max(rgb.g, 0)),
+        b: Math.min(255, Math.max(rgb.b, 0)),
+        a: a,
+    };
+}
+// <http://www.w3.org/TR/css3-values/#integers>
+var CSS_INTEGER = '[-\\+]?\\d+%?';
+// <http://www.w3.org/TR/css3-values/#number-value>
+var CSS_NUMBER = '[-\\+]?\\d*\\.\\d+%?';
+// Allow positive/negative integer/number.  Don't capture the either/or, just the entire outcome.
+var CSS_UNIT = "(?:" + CSS_NUMBER + ")|(?:" + CSS_INTEGER + ")";
+// Actual matching.
+// Parentheses and commas are optional, but not required.
+// Whitespace can take the place of commas or opening paren
+var PERMISSIVE_MATCH3 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
+var PERMISSIVE_MATCH4 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
+var matchers = {
+    CSS_UNIT: new RegExp(CSS_UNIT),
+    rgb: new RegExp('rgb' + PERMISSIVE_MATCH3),
+    rgba: new RegExp('rgba' + PERMISSIVE_MATCH4),
+    hsl: new RegExp('hsl' + PERMISSIVE_MATCH3),
+    hsla: new RegExp('hsla' + PERMISSIVE_MATCH4),
+    hsv: new RegExp('hsv' + PERMISSIVE_MATCH3),
+    hsva: new RegExp('hsva' + PERMISSIVE_MATCH4),
+    hex3: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+    hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
+    hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+    hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
+};
+/**
+ * Permissive string parsing.  Take in a number of formats, and output an object
+ * based on detected format.  Returns `{ r, g, b }` or `{ h, s, l }` or `{ h, s, v}`
+ */
+function stringInputToObject(color) {
+    color = color.trim().toLowerCase();
+    if (color.length === 0) {
+        return false;
+    }
+    var named = false;
+    if (names[color]) {
+        color = names[color];
+        named = true;
+    }
+    else if (color === 'transparent') {
+        return { r: 0, g: 0, b: 0, a: 0, format: 'name' };
+    }
+    // Try to match string input using regular expressions.
+    // Keep most of the number bounding out of this function - don't worry about [0,1] or [0,100] or [0,360]
+    // Just return an object and let the conversion functions handle that.
+    // This way the result will be the same whether the tinycolor is initialized with string or object.
+    var match = matchers.rgb.exec(color);
+    if (match) {
+        return { r: match[1], g: match[2], b: match[3] };
+    }
+    match = matchers.rgba.exec(color);
+    if (match) {
+        return { r: match[1], g: match[2], b: match[3], a: match[4] };
+    }
+    match = matchers.hsl.exec(color);
+    if (match) {
+        return { h: match[1], s: match[2], l: match[3] };
+    }
+    match = matchers.hsla.exec(color);
+    if (match) {
+        return { h: match[1], s: match[2], l: match[3], a: match[4] };
+    }
+    match = matchers.hsv.exec(color);
+    if (match) {
+        return { h: match[1], s: match[2], v: match[3] };
+    }
+    match = matchers.hsva.exec(color);
+    if (match) {
+        return { h: match[1], s: match[2], v: match[3], a: match[4] };
+    }
+    match = matchers.hex8.exec(color);
+    if (match) {
+        return {
+            r: parseIntFromHex(match[1]),
+            g: parseIntFromHex(match[2]),
+            b: parseIntFromHex(match[3]),
+            a: convertHexToDecimal(match[4]),
+            format: named ? 'name' : 'hex8',
+        };
+    }
+    match = matchers.hex6.exec(color);
+    if (match) {
+        return {
+            r: parseIntFromHex(match[1]),
+            g: parseIntFromHex(match[2]),
+            b: parseIntFromHex(match[3]),
+            format: named ? 'name' : 'hex',
+        };
+    }
+    match = matchers.hex4.exec(color);
+    if (match) {
+        return {
+            r: parseIntFromHex(match[1] + match[1]),
+            g: parseIntFromHex(match[2] + match[2]),
+            b: parseIntFromHex(match[3] + match[3]),
+            a: convertHexToDecimal(match[4] + match[4]),
+            format: named ? 'name' : 'hex8',
+        };
+    }
+    match = matchers.hex3.exec(color);
+    if (match) {
+        return {
+            r: parseIntFromHex(match[1] + match[1]),
+            g: parseIntFromHex(match[2] + match[2]),
+            b: parseIntFromHex(match[3] + match[3]),
+            format: named ? 'name' : 'hex',
+        };
+    }
+    return false;
+}
+/**
+ * Check to see if it looks like a CSS unit
+ * (see `matchers` above for definition).
+ */
+function isValidCSSUnit(color) {
+    return Boolean(matchers.CSS_UNIT.exec(String(color)));
+}
+
+// CONCATENATED MODULE: ./node_modules/@ctrl/tinycolor/dist/module/index.js
+
+
+
+
+var TinyColor = /** @class */ (function () {
+    function TinyColor(color, opts) {
+        if (color === void 0) { color = ''; }
+        if (opts === void 0) { opts = {}; }
+        var _a;
+        // If input is already a tinycolor, return itself
+        if (color instanceof TinyColor) {
+            // eslint-disable-next-line no-constructor-return
+            return color;
+        }
+        if (typeof color === 'number') {
+            color = numberInputToObject(color);
+        }
+        this.originalInput = color;
+        var rgb = inputToRGB(color);
+        this.originalInput = color;
+        this.r = rgb.r;
+        this.g = rgb.g;
+        this.b = rgb.b;
+        this.a = rgb.a;
+        this.roundA = Math.round(100 * this.a) / 100;
+        this.format = (_a = opts.format) !== null && _a !== void 0 ? _a : rgb.format;
+        this.gradientType = opts.gradientType;
+        // Don't let the range of [0,255] come back in [0,1].
+        // Potentially lose a little bit of precision here, but will fix issues where
+        // .5 gets interpreted as half of the total, instead of half of 1
+        // If it was supposed to be 128, this was already taken care of by `inputToRgb`
+        if (this.r < 1) {
+            this.r = Math.round(this.r);
+        }
+        if (this.g < 1) {
+            this.g = Math.round(this.g);
+        }
+        if (this.b < 1) {
+            this.b = Math.round(this.b);
+        }
+        this.isValid = rgb.ok;
+    }
+    TinyColor.prototype.isDark = function () {
+        return this.getBrightness() < 128;
+    };
+    TinyColor.prototype.isLight = function () {
+        return !this.isDark();
+    };
+    /**
+     * Returns the perceived brightness of the color, from 0-255.
+     */
+    TinyColor.prototype.getBrightness = function () {
+        // http://www.w3.org/TR/AERT#color-contrast
+        var rgb = this.toRgb();
+        return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    };
+    /**
+     * Returns the perceived luminance of a color, from 0-1.
+     */
+    TinyColor.prototype.getLuminance = function () {
+        // http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+        var rgb = this.toRgb();
+        var R;
+        var G;
+        var B;
+        var RsRGB = rgb.r / 255;
+        var GsRGB = rgb.g / 255;
+        var BsRGB = rgb.b / 255;
+        if (RsRGB <= 0.03928) {
+            R = RsRGB / 12.92;
+        }
+        else {
+            R = Math.pow(((RsRGB + 0.055) / 1.055), 2.4);
+        }
+        if (GsRGB <= 0.03928) {
+            G = GsRGB / 12.92;
+        }
+        else {
+            G = Math.pow(((GsRGB + 0.055) / 1.055), 2.4);
+        }
+        if (BsRGB <= 0.03928) {
+            B = BsRGB / 12.92;
+        }
+        else {
+            B = Math.pow(((BsRGB + 0.055) / 1.055), 2.4);
+        }
+        return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+    };
+    /**
+     * Returns the alpha value of a color, from 0-1.
+     */
+    TinyColor.prototype.getAlpha = function () {
+        return this.a;
+    };
+    /**
+     * Sets the alpha value on the current color.
+     *
+     * @param alpha - The new alpha value. The accepted range is 0-1.
+     */
+    TinyColor.prototype.setAlpha = function (alpha) {
+        this.a = boundAlpha(alpha);
+        this.roundA = Math.round(100 * this.a) / 100;
+        return this;
+    };
+    /**
+     * Returns the object as a HSVA object.
+     */
+    TinyColor.prototype.toHsv = function () {
+        var hsv = rgbToHsv(this.r, this.g, this.b);
+        return { h: hsv.h * 360, s: hsv.s, v: hsv.v, a: this.a };
+    };
+    /**
+     * Returns the hsva values interpolated into a string with the following format:
+     * "hsva(xxx, xxx, xxx, xx)".
+     */
+    TinyColor.prototype.toHsvString = function () {
+        var hsv = rgbToHsv(this.r, this.g, this.b);
+        var h = Math.round(hsv.h * 360);
+        var s = Math.round(hsv.s * 100);
+        var v = Math.round(hsv.v * 100);
+        return this.a === 1 ? "hsv(" + h + ", " + s + "%, " + v + "%)" : "hsva(" + h + ", " + s + "%, " + v + "%, " + this.roundA + ")";
+    };
+    /**
+     * Returns the object as a HSLA object.
+     */
+    TinyColor.prototype.toHsl = function () {
+        var hsl = rgbToHsl(this.r, this.g, this.b);
+        return { h: hsl.h * 360, s: hsl.s, l: hsl.l, a: this.a };
+    };
+    /**
+     * Returns the hsla values interpolated into a string with the following format:
+     * "hsla(xxx, xxx, xxx, xx)".
+     */
+    TinyColor.prototype.toHslString = function () {
+        var hsl = rgbToHsl(this.r, this.g, this.b);
+        var h = Math.round(hsl.h * 360);
+        var s = Math.round(hsl.s * 100);
+        var l = Math.round(hsl.l * 100);
+        return this.a === 1 ? "hsl(" + h + ", " + s + "%, " + l + "%)" : "hsla(" + h + ", " + s + "%, " + l + "%, " + this.roundA + ")";
+    };
+    /**
+     * Returns the hex value of the color.
+     * @param allow3Char will shorten hex value to 3 char if possible
+     */
+    TinyColor.prototype.toHex = function (allow3Char) {
+        if (allow3Char === void 0) { allow3Char = false; }
+        return rgbToHex(this.r, this.g, this.b, allow3Char);
+    };
+    /**
+     * Returns the hex value of the color -with a # appened.
+     * @param allow3Char will shorten hex value to 3 char if possible
+     */
+    TinyColor.prototype.toHexString = function (allow3Char) {
+        if (allow3Char === void 0) { allow3Char = false; }
+        return '#' + this.toHex(allow3Char);
+    };
+    /**
+     * Returns the hex 8 value of the color.
+     * @param allow4Char will shorten hex value to 4 char if possible
+     */
+    TinyColor.prototype.toHex8 = function (allow4Char) {
+        if (allow4Char === void 0) { allow4Char = false; }
+        return rgbaToHex(this.r, this.g, this.b, this.a, allow4Char);
+    };
+    /**
+     * Returns the hex 8 value of the color -with a # appened.
+     * @param allow4Char will shorten hex value to 4 char if possible
+     */
+    TinyColor.prototype.toHex8String = function (allow4Char) {
+        if (allow4Char === void 0) { allow4Char = false; }
+        return '#' + this.toHex8(allow4Char);
+    };
+    /**
+     * Returns the object as a RGBA object.
+     */
+    TinyColor.prototype.toRgb = function () {
+        return {
+            r: Math.round(this.r),
+            g: Math.round(this.g),
+            b: Math.round(this.b),
+            a: this.a,
+        };
+    };
+    /**
+     * Returns the RGBA values interpolated into a string with the following format:
+     * "RGBA(xxx, xxx, xxx, xx)".
+     */
+    TinyColor.prototype.toRgbString = function () {
+        var r = Math.round(this.r);
+        var g = Math.round(this.g);
+        var b = Math.round(this.b);
+        return this.a === 1 ? "rgb(" + r + ", " + g + ", " + b + ")" : "rgba(" + r + ", " + g + ", " + b + ", " + this.roundA + ")";
+    };
+    /**
+     * Returns the object as a RGBA object.
+     */
+    TinyColor.prototype.toPercentageRgb = function () {
+        var fmt = function (x) { return Math.round(bound01(x, 255) * 100) + "%"; };
+        return {
+            r: fmt(this.r),
+            g: fmt(this.g),
+            b: fmt(this.b),
+            a: this.a,
+        };
+    };
+    /**
+     * Returns the RGBA relative values interpolated into a string
+     */
+    TinyColor.prototype.toPercentageRgbString = function () {
+        var rnd = function (x) { return Math.round(bound01(x, 255) * 100); };
+        return this.a === 1
+            ? "rgb(" + rnd(this.r) + "%, " + rnd(this.g) + "%, " + rnd(this.b) + "%)"
+            : "rgba(" + rnd(this.r) + "%, " + rnd(this.g) + "%, " + rnd(this.b) + "%, " + this.roundA + ")";
+    };
+    /**
+     * The 'real' name of the color -if there is one.
+     */
+    TinyColor.prototype.toName = function () {
+        if (this.a === 0) {
+            return 'transparent';
+        }
+        if (this.a < 1) {
+            return false;
+        }
+        var hex = '#' + rgbToHex(this.r, this.g, this.b, false);
+        for (var _i = 0, _a = Object.entries(names); _i < _a.length; _i++) {
+            var _b = _a[_i], key = _b[0], value = _b[1];
+            if (hex === value) {
+                return key;
+            }
+        }
+        return false;
+    };
+    /**
+     * String representation of the color.
+     *
+     * @param format - The format to be used when displaying the string representation.
+     */
+    TinyColor.prototype.toString = function (format) {
+        var formatSet = Boolean(format);
+        format = format !== null && format !== void 0 ? format : this.format;
+        var formattedString = false;
+        var hasAlpha = this.a < 1 && this.a >= 0;
+        var needsAlphaFormat = !formatSet && hasAlpha && (format.startsWith('hex') || format === 'name');
+        if (needsAlphaFormat) {
+            // Special case for "transparent", all other non-alpha formats
+            // will return rgba when there is transparency.
+            if (format === 'name' && this.a === 0) {
+                return this.toName();
+            }
+            return this.toRgbString();
+        }
+        if (format === 'rgb') {
+            formattedString = this.toRgbString();
+        }
+        if (format === 'prgb') {
+            formattedString = this.toPercentageRgbString();
+        }
+        if (format === 'hex' || format === 'hex6') {
+            formattedString = this.toHexString();
+        }
+        if (format === 'hex3') {
+            formattedString = this.toHexString(true);
+        }
+        if (format === 'hex4') {
+            formattedString = this.toHex8String(true);
+        }
+        if (format === 'hex8') {
+            formattedString = this.toHex8String();
+        }
+        if (format === 'name') {
+            formattedString = this.toName();
+        }
+        if (format === 'hsl') {
+            formattedString = this.toHslString();
+        }
+        if (format === 'hsv') {
+            formattedString = this.toHsvString();
+        }
+        return formattedString || this.toHexString();
+    };
+    TinyColor.prototype.toNumber = function () {
+        return (Math.round(this.r) << 16) + (Math.round(this.g) << 8) + Math.round(this.b);
+    };
+    TinyColor.prototype.clone = function () {
+        return new TinyColor(this.toString());
+    };
+    /**
+     * Lighten the color a given amount. Providing 100 will always return white.
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.lighten = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        var hsl = this.toHsl();
+        hsl.l += amount / 100;
+        hsl.l = clamp01(hsl.l);
+        return new TinyColor(hsl);
+    };
+    /**
+     * Brighten the color a given amount, from 0 to 100.
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.brighten = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        var rgb = this.toRgb();
+        rgb.r = Math.max(0, Math.min(255, rgb.r - Math.round(255 * -(amount / 100))));
+        rgb.g = Math.max(0, Math.min(255, rgb.g - Math.round(255 * -(amount / 100))));
+        rgb.b = Math.max(0, Math.min(255, rgb.b - Math.round(255 * -(amount / 100))));
+        return new TinyColor(rgb);
+    };
+    /**
+     * Darken the color a given amount, from 0 to 100.
+     * Providing 100 will always return black.
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.darken = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        var hsl = this.toHsl();
+        hsl.l -= amount / 100;
+        hsl.l = clamp01(hsl.l);
+        return new TinyColor(hsl);
+    };
+    /**
+     * Mix the color with pure white, from 0 to 100.
+     * Providing 0 will do nothing, providing 100 will always return white.
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.tint = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        return this.mix('white', amount);
+    };
+    /**
+     * Mix the color with pure black, from 0 to 100.
+     * Providing 0 will do nothing, providing 100 will always return black.
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.shade = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        return this.mix('black', amount);
+    };
+    /**
+     * Desaturate the color a given amount, from 0 to 100.
+     * Providing 100 will is the same as calling greyscale
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.desaturate = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        var hsl = this.toHsl();
+        hsl.s -= amount / 100;
+        hsl.s = clamp01(hsl.s);
+        return new TinyColor(hsl);
+    };
+    /**
+     * Saturate the color a given amount, from 0 to 100.
+     * @param amount - valid between 1-100
+     */
+    TinyColor.prototype.saturate = function (amount) {
+        if (amount === void 0) { amount = 10; }
+        var hsl = this.toHsl();
+        hsl.s += amount / 100;
+        hsl.s = clamp01(hsl.s);
+        return new TinyColor(hsl);
+    };
+    /**
+     * Completely desaturates a color into greyscale.
+     * Same as calling `desaturate(100)`
+     */
+    TinyColor.prototype.greyscale = function () {
+        return this.desaturate(100);
+    };
+    /**
+     * Spin takes a positive or negative amount within [-360, 360] indicating the change of hue.
+     * Values outside of this range will be wrapped into this range.
+     */
+    TinyColor.prototype.spin = function (amount) {
+        var hsl = this.toHsl();
+        var hue = (hsl.h + amount) % 360;
+        hsl.h = hue < 0 ? 360 + hue : hue;
+        return new TinyColor(hsl);
+    };
+    /**
+     * Mix the current color a given amount with another color, from 0 to 100.
+     * 0 means no mixing (return current color).
+     */
+    TinyColor.prototype.mix = function (color, amount) {
+        if (amount === void 0) { amount = 50; }
+        var rgb1 = this.toRgb();
+        var rgb2 = new TinyColor(color).toRgb();
+        var p = amount / 100;
+        var rgba = {
+            r: (rgb2.r - rgb1.r) * p + rgb1.r,
+            g: (rgb2.g - rgb1.g) * p + rgb1.g,
+            b: (rgb2.b - rgb1.b) * p + rgb1.b,
+            a: (rgb2.a - rgb1.a) * p + rgb1.a,
+        };
+        return new TinyColor(rgba);
+    };
+    TinyColor.prototype.analogous = function (results, slices) {
+        if (results === void 0) { results = 6; }
+        if (slices === void 0) { slices = 30; }
+        var hsl = this.toHsl();
+        var part = 360 / slices;
+        var ret = [this];
+        for (hsl.h = (hsl.h - ((part * results) >> 1) + 720) % 360; --results;) {
+            hsl.h = (hsl.h + part) % 360;
+            ret.push(new TinyColor(hsl));
+        }
+        return ret;
+    };
+    /**
+     * taken from https://github.com/infusion/jQuery-xcolor/blob/master/jquery.xcolor.js
+     */
+    TinyColor.prototype.complement = function () {
+        var hsl = this.toHsl();
+        hsl.h = (hsl.h + 180) % 360;
+        return new TinyColor(hsl);
+    };
+    TinyColor.prototype.monochromatic = function (results) {
+        if (results === void 0) { results = 6; }
+        var hsv = this.toHsv();
+        var h = hsv.h;
+        var s = hsv.s;
+        var v = hsv.v;
+        var res = [];
+        var modification = 1 / results;
+        while (results--) {
+            res.push(new TinyColor({ h: h, s: s, v: v }));
+            v = (v + modification) % 1;
+        }
+        return res;
+    };
+    TinyColor.prototype.splitcomplement = function () {
+        var hsl = this.toHsl();
+        var h = hsl.h;
+        return [
+            this,
+            new TinyColor({ h: (h + 72) % 360, s: hsl.s, l: hsl.l }),
+            new TinyColor({ h: (h + 216) % 360, s: hsl.s, l: hsl.l }),
+        ];
+    };
+    /**
+     * Alias for `polyad(3)`
+     */
+    TinyColor.prototype.triad = function () {
+        return this.polyad(3);
+    };
+    /**
+     * Alias for `polyad(4)`
+     */
+    TinyColor.prototype.tetrad = function () {
+        return this.polyad(4);
+    };
+    /**
+     * Get polyad colors, like (for 1, 2, 3, 4, 5, 6, 7, 8, etc...)
+     * monad, dyad, triad, tetrad, pentad, hexad, heptad, octad, etc...
+     */
+    TinyColor.prototype.polyad = function (n) {
+        var hsl = this.toHsl();
+        var h = hsl.h;
+        var result = [this];
+        var increment = 360 / n;
+        for (var i = 1; i < n; i++) {
+            result.push(new TinyColor({ h: (h + i * increment) % 360, s: hsl.s, l: hsl.l }));
+        }
+        return result;
+    };
+    /**
+     * compare color vs current color
+     */
+    TinyColor.prototype.equals = function (color) {
+        return this.toRgbString() === new TinyColor(color).toRgbString();
+    };
+    return TinyColor;
+}());
+
+// kept for backwards compatability with v1
+function tinycolor(color, opts) {
+    if (color === void 0) { color = ''; }
+    if (opts === void 0) { opts = {}; }
+    return new TinyColor(color, opts);
+}
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/node_modules/@ant-design/colors/dist/index.esm.js
+
+
 var hueStep = 2; // 色相阶梯
-var saturationStep = 16; // 饱和度阶梯，浅色部分
-var saturationStep2 = 5; // 饱和度阶梯，深色部分
-var brightnessStep1 = 5; // 亮度阶梯，浅色部分
-var brightnessStep2 = 15; // 亮度阶梯，深色部分
+
+var saturationStep = 0.16; // 饱和度阶梯，浅色部分
+
+var saturationStep2 = 0.05; // 饱和度阶梯，深色部分
+
+var brightnessStep1 = 0.05; // 亮度阶梯，浅色部分
+
+var brightnessStep2 = 0.15; // 亮度阶梯，深色部分
+
 var lightColorCount = 5; // 浅色数量，主色上
+
 var darkColorCount = 4; // 深色数量，主色下
+// 暗色主题颜色映射关系表
+
+var darkColorMap = [{
+  index: 7,
+  opacity: 0.15
+}, {
+  index: 6,
+  opacity: 0.25
+}, {
+  index: 5,
+  opacity: 0.3
+}, {
+  index: 5,
+  opacity: 0.45
+}, {
+  index: 5,
+  opacity: 0.65
+}, {
+  index: 5,
+  opacity: 0.85
+}, {
+  index: 4,
+  opacity: 0.9
+}, {
+  index: 3,
+  opacity: 0.95
+}, {
+  index: 2,
+  opacity: 0.97
+}, {
+  index: 1,
+  opacity: 0.98
+}];
+
 function getHue(hsv, i, light) {
-    var hue;
-    // 根据色相不同，色相转向不同
-    if (Math.round(hsv.h) >= 60 && Math.round(hsv.h) <= 240) {
-        hue = light ? Math.round(hsv.h) - hueStep * i : Math.round(hsv.h) + hueStep * i;
-    }
-    else {
-        hue = light ? Math.round(hsv.h) + hueStep * i : Math.round(hsv.h) - hueStep * i;
-    }
-    if (hue < 0) {
-        hue += 360;
-    }
-    else if (hue >= 360) {
-        hue -= 360;
-    }
-    return hue;
+  var hue; // 根据色相不同，色相转向不同
+
+  if (Math.round(hsv.h) >= 60 && Math.round(hsv.h) <= 240) {
+    hue = light ? Math.round(hsv.h) - hueStep * i : Math.round(hsv.h) + hueStep * i;
+  } else {
+    hue = light ? Math.round(hsv.h) + hueStep * i : Math.round(hsv.h) - hueStep * i;
+  }
+
+  if (hue < 0) {
+    hue += 360;
+  } else if (hue >= 360) {
+    hue -= 360;
+  }
+
+  return hue;
 }
+
 function getSaturation(hsv, i, light) {
-    // grey color don't change saturation
-    if (hsv.h === 0 && hsv.s === 0) {
-        return hsv.s;
-    }
-    var saturation;
-    if (light) {
-        saturation = Math.round(hsv.s * 100) - saturationStep * i;
-    }
-    else if (i === darkColorCount) {
-        saturation = Math.round(hsv.s * 100) + saturationStep;
-    }
-    else {
-        saturation = Math.round(hsv.s * 100) + saturationStep2 * i;
-    }
-    // 边界值修正
-    if (saturation > 100) {
-        saturation = 100;
-    }
-    // 第一格的 s 限制在 6-10 之间
-    if (light && i === lightColorCount && saturation > 10) {
-        saturation = 10;
-    }
-    if (saturation < 6) {
-        saturation = 6;
-    }
-    return saturation;
+  // grey color don't change saturation
+  if (hsv.h === 0 && hsv.s === 0) {
+    return hsv.s;
+  }
+
+  var saturation;
+
+  if (light) {
+    saturation = hsv.s - saturationStep * i;
+  } else if (i === darkColorCount) {
+    saturation = hsv.s + saturationStep;
+  } else {
+    saturation = hsv.s + saturationStep2 * i;
+  } // 边界值修正
+
+
+  if (saturation > 1) {
+    saturation = 1;
+  } // 第一格的 s 限制在 0.06-0.1 之间
+
+
+  if (light && i === lightColorCount && saturation > 0.1) {
+    saturation = 0.1;
+  }
+
+  if (saturation < 0.06) {
+    saturation = 0.06;
+  }
+
+  return Number(saturation.toFixed(2));
 }
+
 function getValue(hsv, i, light) {
-    if (light) {
-        return Math.round(hsv.v * 100) + brightnessStep1 * i;
-    }
-    return Math.round(hsv.v * 100) - brightnessStep2 * i;
+  var value;
+
+  if (light) {
+    value = hsv.v + brightnessStep1 * i;
+  } else {
+    value = hsv.v - brightnessStep2 * i;
+  }
+
+  if (value > 1) {
+    value = 1;
+  }
+
+  return Number(value.toFixed(2));
 }
+
 function generate(color) {
-    var patterns = [];
-    var pColor = tinycolor2_1.default(color);
-    for (var i = lightColorCount; i > 0; i -= 1) {
-        var hsv = pColor.toHsv();
-        var colorString = tinycolor2_1.default({
-            h: getHue(hsv, i, true),
-            s: getSaturation(hsv, i, true),
-            v: getValue(hsv, i, true),
-        }).toHexString();
-        patterns.push(colorString);
-    }
-    patterns.push(pColor.toHexString());
-    for (var i = 1; i <= darkColorCount; i += 1) {
-        var hsv = pColor.toHsv();
-        var colorString = tinycolor2_1.default({
-            h: getHue(hsv, i),
-            s: getSaturation(hsv, i),
-            v: getValue(hsv, i),
-        }).toHexString();
-        patterns.push(colorString);
-    }
-    return patterns;
+  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var patterns = [];
+  var pColor = new TinyColor(color);
+
+  for (var i = lightColorCount; i > 0; i -= 1) {
+    var hsv = pColor.toHsv();
+    var colorString = new TinyColor({
+      h: getHue(hsv, i, true),
+      s: getSaturation(hsv, i, true),
+      v: getValue(hsv, i, true)
+    }).toHexString();
+    patterns.push(colorString);
+  }
+
+  patterns.push(pColor.toHexString());
+
+  for (var _i = 1; _i <= darkColorCount; _i += 1) {
+    var _hsv = pColor.toHsv();
+
+    var _colorString = new TinyColor({
+      h: getHue(_hsv, _i),
+      s: getSaturation(_hsv, _i),
+      v: getValue(_hsv, _i)
+    }).toHexString();
+
+    patterns.push(_colorString);
+  } // dark theme patterns
+
+
+  if (opts.theme === 'dark') {
+    return darkColorMap.map(function (_ref) {
+      var index = _ref.index,
+          opacity = _ref.opacity;
+      var darkColorString = new TinyColor(opts.backgroundColor || '#141414').mix(patterns[index], opacity * 100).toHexString();
+      return darkColorString;
+    });
+  }
+
+  return patterns;
 }
-exports.default = generate;
 
-
-/***/ }),
-
-/***/ 4100:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var generate_1 = __importDefault(__webpack_require__(2808));
-exports.generate = generate_1.default;
 var presetPrimaryColors = {
-    red: '#F5222D',
-    volcano: '#FA541C',
-    orange: '#FA8C16',
-    gold: '#FAAD14',
-    yellow: '#FADB14',
-    lime: '#A0D911',
-    green: '#52C41A',
-    cyan: '#13C2C2',
-    blue: '#1890FF',
-    geekblue: '#2F54EB',
-    purple: '#722ED1',
-    magenta: '#EB2F96',
-    grey: '#666666',
+  red: '#F5222D',
+  volcano: '#FA541C',
+  orange: '#FA8C16',
+  gold: '#FAAD14',
+  yellow: '#FADB14',
+  lime: '#A0D911',
+  green: '#52C41A',
+  cyan: '#13C2C2',
+  blue: '#1890FF',
+  geekblue: '#2F54EB',
+  purple: '#722ED1',
+  magenta: '#EB2F96',
+  grey: '#666666'
 };
-exports.presetPrimaryColors = presetPrimaryColors;
 var presetPalettes = {};
-exports.presetPalettes = presetPalettes;
+var presetDarkPalettes = {};
 Object.keys(presetPrimaryColors).forEach(function (key) {
-    presetPalettes[key] = generate_1.default(presetPrimaryColors[key]);
-    presetPalettes[key].primary = presetPalettes[key][5];
+  presetPalettes[key] = generate(presetPrimaryColors[key]);
+  presetPalettes[key].primary = presetPalettes[key][5]; // dark presetPalettes
+
+  presetDarkPalettes[key] = generate(presetPrimaryColors[key], {
+    theme: 'dark',
+    backgroundColor: '#141414'
+  });
+  presetDarkPalettes[key].primary = presetDarkPalettes[key][5];
 });
 var red = presetPalettes.red;
-exports.red = red;
 var volcano = presetPalettes.volcano;
-exports.volcano = volcano;
 var gold = presetPalettes.gold;
-exports.gold = gold;
 var orange = presetPalettes.orange;
-exports.orange = orange;
 var yellow = presetPalettes.yellow;
-exports.yellow = yellow;
 var lime = presetPalettes.lime;
-exports.lime = lime;
 var green = presetPalettes.green;
-exports.green = green;
 var cyan = presetPalettes.cyan;
-exports.cyan = cyan;
 var blue = presetPalettes.blue;
-exports.blue = blue;
 var geekblue = presetPalettes.geekblue;
-exports.geekblue = geekblue;
 var purple = presetPalettes.purple;
-exports.purple = purple;
 var magenta = presetPalettes.magenta;
-exports.magenta = magenta;
 var grey = presetPalettes.grey;
-exports.grey = grey;
+
+
 
 
 /***/ }),
@@ -1305,7 +2520,7 @@ module.exports = _unsupportedIterableToArray;
 
 /***/ }),
 
-/***/ 5189:
+/***/ 9774:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3595,6 +4810,286 @@ steps_Steps.defaultProps = {
 };
 // EXTERNAL MODULE: ./src/index.css
 var src = __webpack_require__(8548);
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/StarFilled.js
+// This icon file is generated automatically.
+var StarFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z" } }] }, "name": "star", "theme": "filled" };
+/* harmony default export */ const asn_StarFilled = (StarFilled);
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/node_modules/@ant-design/colors/dist/index.esm.js + 5 modules
+var index_esm = __webpack_require__(3249);
+// EXTERNAL MODULE: ./node_modules/insert-css/index.js
+var insert_css = __webpack_require__(8186);
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/utils.js
+
+
+
+
+
+
+function utils_warning(valid, message) {
+  es_warning(valid, "[@ant-design/icons] ".concat(message));
+}
+function isIconDefinition(target) {
+  return _typeof(target) === 'object' && typeof target.name === 'string' && typeof target.theme === 'string' && (_typeof(target.icon) === 'object' || typeof target.icon === 'function');
+}
+function normalizeAttrs() {
+  var attrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return Object.keys(attrs).reduce(function (acc, key) {
+    var val = attrs[key];
+
+    switch (key) {
+      case 'class':
+        acc.className = val;
+        delete acc.class;
+        break;
+
+      default:
+        acc[key] = val;
+    }
+
+    return acc;
+  }, {});
+}
+function utils_generate(node, key, rootProps) {
+  if (!rootProps) {
+    return /*#__PURE__*/react.createElement(node.tag, _objectSpread2({
+      key: key
+    }, normalizeAttrs(node.attrs)), (node.children || []).map(function (child, index) {
+      return utils_generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
+    }));
+  }
+
+  return /*#__PURE__*/react.createElement(node.tag, _objectSpread2(_objectSpread2({
+    key: key
+  }, normalizeAttrs(node.attrs)), rootProps), (node.children || []).map(function (child, index) {
+    return utils_generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
+  }));
+}
+function getSecondaryColor(primaryColor) {
+  // choose the second color
+  return (0,index_esm.generate)(primaryColor)[0];
+}
+function normalizeTwoToneColors(twoToneColor) {
+  if (!twoToneColor) {
+    return [];
+  }
+
+  return Array.isArray(twoToneColor) ? twoToneColor : [twoToneColor];
+} // These props make sure that the SVG behaviours like general text.
+// Reference: https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
+
+var svgBaseProps = {
+  width: '1em',
+  height: '1em',
+  fill: 'currentColor',
+  'aria-hidden': 'true',
+  focusable: 'false'
+};
+var iconStyles = "\n.anticon {\n  display: inline-block;\n  color: inherit;\n  font-style: normal;\n  line-height: 0;\n  text-align: center;\n  text-transform: none;\n  vertical-align: -0.125em;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.anticon > * {\n  line-height: 1;\n}\n\n.anticon svg {\n  display: inline-block;\n}\n\n.anticon::before {\n  display: none;\n}\n\n.anticon .anticon-icon {\n  display: block;\n}\n\n.anticon[tabindex] {\n  cursor: pointer;\n}\n\n.anticon-spin::before,\n.anticon-spin {\n  display: inline-block;\n  -webkit-animation: loadingCircle 1s infinite linear;\n  animation: loadingCircle 1s infinite linear;\n}\n\n@-webkit-keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n";
+var cssInjectedFlag = false;
+var useInsertStyles = function useInsertStyles() {
+  var styleStr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : iconStyles;
+  (0,react.useEffect)(function () {
+    if (!cssInjectedFlag) {
+      (0,insert_css.insertCss)(styleStr, {
+        prepend: true
+      });
+      cssInjectedFlag = true;
+    }
+  }, []);
+};
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/components/IconBase.js
+
+
+
+var twoToneColorPalette = {
+  primaryColor: '#333',
+  secondaryColor: '#E6E6E6',
+  calculated: false
+};
+
+function setTwoToneColors(_ref) {
+  var primaryColor = _ref.primaryColor,
+      secondaryColor = _ref.secondaryColor;
+  twoToneColorPalette.primaryColor = primaryColor;
+  twoToneColorPalette.secondaryColor = secondaryColor || getSecondaryColor(primaryColor);
+  twoToneColorPalette.calculated = !!secondaryColor;
+}
+
+function getTwoToneColors() {
+  return _objectSpread2({}, twoToneColorPalette);
+}
+
+var IconBase = function IconBase(props) {
+  var icon = props.icon,
+      className = props.className,
+      onClick = props.onClick,
+      style = props.style,
+      primaryColor = props.primaryColor,
+      secondaryColor = props.secondaryColor,
+      restProps = _objectWithoutProperties(props, ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"]);
+
+  var colors = twoToneColorPalette;
+
+  if (primaryColor) {
+    colors = {
+      primaryColor: primaryColor,
+      secondaryColor: secondaryColor || getSecondaryColor(primaryColor)
+    };
+  }
+
+  useInsertStyles();
+  utils_warning(isIconDefinition(icon), "icon should be icon definiton, but got ".concat(icon));
+
+  if (!isIconDefinition(icon)) {
+    return null;
+  }
+
+  var target = icon;
+
+  if (target && typeof target.icon === 'function') {
+    target = _objectSpread2(_objectSpread2({}, target), {}, {
+      icon: target.icon(colors.primaryColor, colors.secondaryColor)
+    });
+  }
+
+  return utils_generate(target.icon, "svg-".concat(target.name), _objectSpread2({
+    className: className,
+    onClick: onClick,
+    style: style,
+    'data-icon': target.name,
+    width: '1em',
+    height: '1em',
+    fill: 'currentColor',
+    'aria-hidden': 'true'
+  }, restProps));
+};
+
+IconBase.displayName = 'IconReact';
+IconBase.getTwoToneColors = getTwoToneColors;
+IconBase.setTwoToneColors = setTwoToneColors;
+/* harmony default export */ const components_IconBase = (IconBase);
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/components/twoTonePrimaryColor.js
+
+
+
+function setTwoToneColor(twoToneColor) {
+  var _normalizeTwoToneColo = normalizeTwoToneColors(twoToneColor),
+      _normalizeTwoToneColo2 = _slicedToArray(_normalizeTwoToneColo, 2),
+      primaryColor = _normalizeTwoToneColo2[0],
+      secondaryColor = _normalizeTwoToneColo2[1];
+
+  return components_IconBase.setTwoToneColors({
+    primaryColor: primaryColor,
+    secondaryColor: secondaryColor
+  });
+}
+function getTwoToneColor() {
+  var colors = components_IconBase.getTwoToneColors();
+
+  if (!colors.calculated) {
+    return colors.primaryColor;
+  }
+
+  return [colors.primaryColor, colors.secondaryColor];
+}
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/components/AntdIcon.js
+
+
+
+
+
+
+
+ // Initial setting
+// should move it to antd main repo?
+
+setTwoToneColor('#1890ff');
+var Icon = /*#__PURE__*/react.forwardRef(function (props, ref) {
+  var className = props.className,
+      icon = props.icon,
+      spin = props.spin,
+      rotate = props.rotate,
+      tabIndex = props.tabIndex,
+      onClick = props.onClick,
+      twoToneColor = props.twoToneColor,
+      restProps = _objectWithoutProperties(props, ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"]);
+
+  var classString = classnames_default()('anticon', _defineProperty({}, "anticon-".concat(icon.name), Boolean(icon.name)), {
+    'anticon-spin': !!spin || icon.name === 'loading'
+  }, className);
+  var iconTabIndex = tabIndex;
+
+  if (iconTabIndex === undefined && onClick) {
+    iconTabIndex = -1;
+  }
+
+  var svgStyle = rotate ? {
+    msTransform: "rotate(".concat(rotate, "deg)"),
+    transform: "rotate(".concat(rotate, "deg)")
+  } : undefined;
+
+  var _normalizeTwoToneColo = normalizeTwoToneColors(twoToneColor),
+      _normalizeTwoToneColo2 = _slicedToArray(_normalizeTwoToneColo, 2),
+      primaryColor = _normalizeTwoToneColo2[0],
+      secondaryColor = _normalizeTwoToneColo2[1];
+
+  return /*#__PURE__*/react.createElement("span", Object.assign({
+    role: "img",
+    "aria-label": icon.name
+  }, restProps, {
+    ref: ref,
+    tabIndex: iconTabIndex,
+    onClick: onClick,
+    className: classString
+  }), /*#__PURE__*/react.createElement(components_IconBase, {
+    icon: icon,
+    primaryColor: primaryColor,
+    secondaryColor: secondaryColor,
+    style: svgStyle
+  }));
+});
+Icon.displayName = 'AntdIcon';
+Icon.getTwoToneColor = getTwoToneColor;
+Icon.setTwoToneColor = setTwoToneColor;
+/* harmony default export */ const AntdIcon = (Icon);
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/StarFilled.js
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var StarFilled_StarFilled = function StarFilled(props, ref) {
+  return /*#__PURE__*/react.createElement(AntdIcon, Object.assign({}, props, {
+    ref: ref,
+    icon: asn_StarFilled
+  }));
+};
+
+StarFilled_StarFilled.displayName = 'StarFilled';
+/* harmony default export */ const icons_StarFilled = (/*#__PURE__*/react.forwardRef(StarFilled_StarFilled));
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/TrophyOutlined.js
+// This icon file is generated automatically.
+var TrophyOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M868 160h-92v-40c0-4.4-3.6-8-8-8H256c-4.4 0-8 3.6-8 8v40h-92a44 44 0 00-44 44v148c0 81.7 60 149.6 138.2 162C265.7 630.2 359 721.7 476 734.5v105.2H280c-17.7 0-32 14.3-32 32V904c0 4.4 3.6 8 8 8h512c4.4 0 8-3.6 8-8v-32.3c0-17.7-14.3-32-32-32H548V734.5C665 721.7 758.3 630.2 773.8 514 852 501.6 912 433.7 912 352V204a44 44 0 00-44-44zM184 352V232h64v207.6a91.99 91.99 0 01-64-87.6zm520 128c0 49.1-19.1 95.4-53.9 130.1-34.8 34.8-81 53.9-130.1 53.9h-16c-49.1 0-95.4-19.1-130.1-53.9-34.8-34.8-53.9-81-53.9-130.1V184h384v296zm136-128c0 41-26.9 75.8-64 87.6V232h64v120z" } }] }, "name": "trophy", "theme": "outlined" };
+/* harmony default export */ const asn_TrophyOutlined = (TrophyOutlined);
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/TrophyOutlined.js
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var TrophyOutlined_TrophyOutlined = function TrophyOutlined(props, ref) {
+  return /*#__PURE__*/react.createElement(AntdIcon, Object.assign({}, props, {
+    ref: ref,
+    icon: asn_TrophyOutlined
+  }));
+};
+
+TrophyOutlined_TrophyOutlined.displayName = 'TrophyOutlined';
+/* harmony default export */ const icons_TrophyOutlined = (/*#__PURE__*/react.forwardRef(TrophyOutlined_TrophyOutlined));
 // CONCATENATED MODULE: ./src/App.js
 function App_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
 
@@ -3623,9 +5118,8 @@ function App_defineProperty(obj, key, value) { if (key in obj) { Object.definePr
 
 
 
-var App_Step = steps_Steps.Step; // change to make this a functional component
-// define a useState for getTotalPoints()
-// get rid of getTotalPoints, and use useState value wherever that function is called
+
+var App_Step = steps_Steps.Step;
 
 var App = /*#__PURE__*/function (_Component) {
   App_inherits(App, _Component);
@@ -3677,20 +5171,42 @@ var App = /*#__PURE__*/function (_Component) {
         levelMax = 50;
       } else if (currentLevel === 1) {
         levelMax = 100;
-      } else if (currentLevel === 2) {
+      } else if (currentLevel >= 2) {
         levelMax = 150;
       }
 
       return levelMax;
     });
 
+    App_defineProperty(App_assertThisInitialized(_this), "getTotalPoints", function () {
+      var totalPoints = _this.state.Points;
+      return totalPoints;
+    });
+
     App_defineProperty(App_assertThisInitialized(_this), "getDescription", function () {
       var levelMax = _this.getLevelMax();
 
-      var totalPoints = _this.state.Points;
+      var totalPoints = _this.getTotalPoints();
+
       var pointsLeft = levelMax - totalPoints;
-      var description = pointsLeft + " points until the next level!";
+      var description = pointsLeft + " points to go!";
       return description.toString();
+    });
+
+    App_defineProperty(App_assertThisInitialized(_this), "getPercentage", function () {
+      var levelMax = _this.getLevelMax();
+
+      var totalPoints = _this.getTotalPoints();
+
+      var percent = totalPoints / levelMax * 100;
+
+      if (totalPoints >= 50 && totalPoints < 100) {
+        percent = (totalPoints - 50) / 50 * 100;
+      } else if (totalPoints >= 100 && totalPoints < 150) {
+        percent = (totalPoints - 100) / 50 * 100;
+      }
+
+      return percent;
     });
 
     _this.state = {
@@ -3708,21 +5224,72 @@ var App = /*#__PURE__*/function (_Component) {
     key: "fetchCRMData",
     value: function fetchCRMData() {
       // code for fetching data
-      this.setPoints(123);
+      this.setPoints(125);
     }
   }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react.createElement("div", {
-        className: "App"
-      }, /*#__PURE__*/react.createElement("input", {
-        type: "text",
-        name: "pts",
-        onChange: this.handleChange,
-        value: this.state.Points
-      }), /*#__PURE__*/react.createElement(steps_Steps, {
+        className: "parent"
+      }, /*#__PURE__*/react.createElement("div", {
+        className: "sectionContainer"
+      }, this.getCurrentLevel() === 0 ? /*#__PURE__*/react.createElement("div", {
+        className: "firstSection"
+      }, /*#__PURE__*/react.createElement("div", {
+        className: "currentLevelSymbol"
+      }, /*#__PURE__*/react.createElement(icons_StarFilled, {
+        style: {
+          fontSize: '25px',
+          color: '#FFD700'
+        }
+      }), /*#__PURE__*/react.createElement("div", {
+        className: "pointsText"
+      }, " ", this.getTotalPoints(), "/", this.getLevelMax(), " "), /*#__PURE__*/react.createElement("div", {
+        className: "bottomText"
+      }, " points "))) : null, this.getCurrentLevel() === 1 ? /*#__PURE__*/react.createElement("div", {
+        className: "secondSection"
+      }, /*#__PURE__*/react.createElement("div", {
+        className: "currentLevelSymbol"
+      }, /*#__PURE__*/react.createElement(icons_StarFilled, {
+        style: {
+          fontSize: '25px',
+          color: '#FFD700'
+        }
+      }), /*#__PURE__*/react.createElement("div", {
+        className: "pointsText"
+      }, " ", this.getTotalPoints(), "/", this.getLevelMax(), " "), /*#__PURE__*/react.createElement("div", {
+        className: "bottomText"
+      }, " points "))) : null, this.getCurrentLevel() === 2 ? /*#__PURE__*/react.createElement("div", {
+        className: "thirdSection"
+      }, /*#__PURE__*/react.createElement("div", {
+        className: "currentLevelSymbol"
+      }, /*#__PURE__*/react.createElement(icons_StarFilled, {
+        style: {
+          fontSize: '25px',
+          color: '#FFD700'
+        }
+      }), /*#__PURE__*/react.createElement("div", {
+        className: "pointsText"
+      }, " ", this.getTotalPoints(), "/", this.getLevelMax(), " "), /*#__PURE__*/react.createElement("div", {
+        className: "bottomText"
+      }, " points "))) : null, this.getCurrentLevel() === 3 ? /*#__PURE__*/react.createElement("div", {
+        className: "fourthSection"
+      }, /*#__PURE__*/react.createElement("div", {
+        className: "currentLevelSymbol"
+      }, /*#__PURE__*/react.createElement(icons_StarFilled, {
+        style: {
+          fontSize: '25px',
+          color: '#FFD700'
+        }
+      }), /*#__PURE__*/react.createElement("div", {
+        className: "pointsText"
+      }, " ", this.getTotalPoints(), "/", this.getLevelMax(), " "), /*#__PURE__*/react.createElement("div", {
+        className: "bottomText"
+      }, " points "))) : null), /*#__PURE__*/react.createElement("div", {
+        className: "stepsComponent"
+      }, this.getCurrentLevel() === 3 ? /*#__PURE__*/react.createElement(steps_Steps, {
         current: this.getCurrentLevel(),
-        direction: "horizontal"
+        direction: "vertical"
       }, this.getCurrentLevel() === 0 ? /*#__PURE__*/react.createElement(App_Step, {
         title: "Level 1",
         description: this.getDescription()
@@ -3744,8 +5311,36 @@ var App = /*#__PURE__*/function (_Component) {
         subTitle: "100 points"
       }), /*#__PURE__*/react.createElement(App_Step, {
         title: "Level 4",
-        subTitle: "150 points"
-      })));
+        subTitle: "150 points",
+        icon: /*#__PURE__*/react.createElement(icons_TrophyOutlined, null)
+      })) : /*#__PURE__*/react.createElement(steps_Steps, {
+        current: this.getCurrentLevel(),
+        direction: "vertical",
+        percent: this.getPercentage()
+      }, this.getCurrentLevel() === 0 ? /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 1",
+        description: this.getDescription()
+      }) : /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 1"
+      }), this.getCurrentLevel() === 1 ? /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 2",
+        subTitle: "50 points",
+        description: this.getDescription()
+      }) : /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 2",
+        subTitle: "50 points"
+      }), this.getCurrentLevel() === 2 ? /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 3",
+        subTitle: "100 points",
+        description: this.getDescription()
+      }) : /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 3",
+        subTitle: "100 points"
+      }), /*#__PURE__*/react.createElement(App_Step, {
+        title: "Level 4",
+        subTitle: "150 points",
+        icon: /*#__PURE__*/react.createElement(icons_TrophyOutlined, null)
+      }))));
     }
   }]);
 
@@ -3762,7 +5357,7 @@ var App = /*#__PURE__*/function (_Component) {
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7294);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3935);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5189);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9774);
 
 
 
@@ -3866,7 +5461,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_node_modules_antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  padding: 70px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".parent {\n  padding: 30px;\n  display: flex;\n  align-self: start;\n}\n.stepsComponent {\n  padding-top: 15px;\n}\n.sectionContainer {\n  flex-direction: column;\n}\n.firstSection {\n  margin-top: 5px;\n  display: flex;\n  align-self: start;\n  height: 54px;\n  width: 100px;\n}\n.secondSection {\n  margin-top: 55px;\n  display: flex;\n  align-self: start;\n  height: 54px;\n  width: 100px;\n}\n.thirdSection {\n  margin-top: 107px;\n  display: flex;\n  align-self: start;\n  height: 54px;\n  width: 100px;\n}\n.fourthSection {\n  margin-top: 148px;\n  display: flex;\n  align-self: start;\n  height: 54px;\n  width: 100px;\n}\n.currentLevelSymbol {\n  width: 62px;\n  height: 62px;\n  margin-left: 20px;\n  border-style: solid;\n  border-radius: 50%;\n  border-color:#1890ff;\n  background-color: #ecf3f9;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  align-items: center; \n  justify-content: center;\n}\n.pointsText {\n  font-size: 10px;\n  font-weight: bold;\n}\n.bottomText {\n  font-size: 8px;\n  font: bold;\n  line-height: 5px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6262,7 +7857,7 @@ else {}
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "d5c864dfec4e219116d0"
+/******/ 		__webpack_require__.h = () => "da647715d836061b367b"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
