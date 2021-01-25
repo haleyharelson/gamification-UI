@@ -1,9 +1,73 @@
 import React, { Component } from 'react';
-import { Steps } from "antd";
+import { Steps, Table } from "antd";
 import './index.css';
 import { TrophyOutlined, StarFilled } from '@ant-design/icons';
 
 const { Step } = Steps;
+const columns = [
+  {
+    title: 'Top Players This Week',
+    dataIndex: 'weekname',
+    align: 'center',
+    colSpan: 2,
+  },
+  {
+    title: '',
+    colSpan: 0,
+    dataIndex: 'weekpoints',
+    align: 'center'
+  },
+  {
+    title: 'Top Players This Month',
+    dataIndex: 'monthname',
+    align: 'center',
+    colSpan: 2,
+  },
+  {
+    title: '',
+    colSpan: 0,
+    dataIndex: 'monthpoints',
+    align: 'center'
+  }
+];
+
+const data = [
+  {
+    key: '1',
+    weekname: 'John Brown', 
+    monthname: 'John Brown',
+    weekpoints: '200',
+    monthpoints: '500',
+  },
+  {
+    key: '2',
+    weekname: 'Jim Green',
+    monthname: 'John Brown',
+    weekpoints: '200',
+    monthpoints: '500',
+  },
+  {
+    key: '3',
+    weekname: 'Joe Black',
+    monthname: 'John Brown',
+    weekpoints: '200',
+    monthpoints: '500',
+  },
+  {
+    key: '4',
+    weekname: 'Joe Black',
+    monthname: 'John Brown',
+    weekpoints: '200',
+    monthpoints: '500',
+  },
+  {
+    key: '5',
+    weekname: 'Joe Black',
+    monthname: 'John Brown',
+    weekpoints: '200',
+    monthpoints: '500',
+  },
+];
 
 class App extends Component {
   constructor(props) {
@@ -143,6 +207,33 @@ class App extends Component {
     <Step title="Level 4" subTitle="150 points" icon={<TrophyOutlined/>}/> 
     </Steps>
   }
+  </div>
+  <div className="leaderboardSection">
+  <div className="rankIconColumn">
+  <div className="rankIcon">
+  <div className="rankText"> 1 </div>
+  </div>
+  <div className="rankIcon">
+  <div className="rankText"> 2 </div>
+  </div>
+  <div className="rankIcon">
+  <div className="rankText"> 3 </div>
+  </div>
+  <div className="rankIcon">
+  <div className="rankText"> 4 </div>
+  </div>
+  <div className="rankIcon">
+  <div className="rankText"> 5 </div>
+  </div>
+  </div>
+  <div className="tableSection">
+  <Table
+    columns={columns}
+    dataSource={data}
+    bordered
+    pagination={false}
+  />
+  </div>
   </div>
   </div>
    );

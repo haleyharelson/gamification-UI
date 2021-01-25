@@ -61,3 +61,40 @@
   font: bold;
   line-height: 5px;
 }
+
+.leaderboardSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.tableSection {
+  display: flex;
+}
+
+.rankIcon {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 3.2px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color:#1890ff;
+  background-color: #ecf3f9;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: center;
+}
+
+.rankText {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.rankIconColumn {
+  padding-top: 56px;
+  display: flex;
+  flex-direction: column;
+}
